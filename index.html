@@ -17,7 +17,94 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!--ROBOTO-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<!--Below is new untested code.-->
 <body class="element_chrome_safari element_moz">
+    <div>
+        <label class="above_text Space_Mono_Font">by : &#9; </label><label class="by_company_thing Space_Mono_Font">intiq.</label>
+    </div>
+
+    <h1 class="above_text Space_Mono_Font center" style="font-size: 4em; margin: 0;">Random Word</h1><br>
+    <h1 class="above_text Space_Mono_Font center" style="font-size: 4/3em; margin-top: -20px;">Generator</h1>
+
+    <div class="center" style="margin: 20px;"><!--very interesting div centering here i see-->
+        <div class="center display_word DM_Sans_Font" style="max-width: 100%; min-width: 50%;">
+            <div id="finished_output" style="justify-content: center;">
+                The finished word will appear here.
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <div class="center" style="justify-content: center;">
+            <!--FONT SELECTOR DROP DOWN MENU-->
+            <div style="height:100%; width:20%">
+                <h4 class="above_text Space_Mono_Font center">Font Selector:</h4><br>
+                <select id="Font_Selector" size="6">
+                    <option value="DM_Sans_Font" class="DM_Sans_Font">DM Sans</option>
+                    <option value="Space_Mono_Font" class="Space_Mono_Font">Space Mono</option>
+                    <option value="Calibri_Font" class="Calibri_Font">Calibri</option>
+            
+                    <option value="Courier_New" class="font_style-Courier_New">Courier New</option>
+                    <option value="Franklin_Gothic_Medium" class="font_style-Franklin_Gothic_Medium">Franklin Gothic Medium</option>
+                    <option value="Gill_Sans" class="font_style-Gill_Sans">Gill Sans</option>
+                    <option value="Lucida_Sans" class="font_style-Lucida_Sans">Lucida Sans</option>
+                    <option value="Segoe_UI" class="font_style-Segoe_UI">Segoe UI</option>
+                    <option value="Times_New_Romans" class="font_style-Times_New_Romans">Times New Romans</option>
+                    <option value="Trebuchet_MS" class="font_style-Trebuchet_MS">Trebuchet MS</option>
+                    <option value="Arial" class="font_style-Arial">Arial</option>
+                    <option value="Cambria" class="font_style-Cambria">Cambria</option>
+                    <option value="Georgia" class="font_style-Georgia">Georgia</option>
+                    <option value="Impact" class="font_style-Impact">Impact</option>
+                    <option value="Verdana" class="font_style-Verdana">Verdana</option>
+                </select>
+            </div>
+        
+            <!--LENGTH OF WORD RADIO BUTTONS-->
+            <div class="above_text Space_Mono_Font" style="height:100%; width:20%;">
+                <h4 class="center">Word Length:</h4><br>
+                <div style="justify-content: center; align-items: center;">
+                    <input type="radio" id="short_length_word" name="important_number" value="length_short"><label for="short_length_word">Short</label><br>
+                    <input type="radio" id="medium_length_word" name="important_number" value="length_med"><label for="medium_length_word">Medium</label><br>
+                    <input type="radio" id="long_length_word" name="important_number" value="length_long"><label for="long_length_word">Long</label><br>
+                    <input type="radio" id="user_length_word" name="important_number" value="length_user"><input type="number" id="inputted_length" name="important_number" style="width: 55%;" placeholder="Put a number!">
+                </div>
+            </div>
+        
+            <!--TYPE OF WORD RADIO DROP DOWN LIST-->
+            <div style="height:100%; width: 20%;">
+                <h4 class="above_text Space_Mono_Font center">Type of word:</h4>
+                <div class="center">
+                    <select id="dict_nah"  class="Space_Mono_Font">
+                        <option value="made_up" class="Space_Mono_Font">Made Up Word</option>
+                        <option value="real" class="Space_Mono_Font">Real Word</option>
+                    </select>
+                </div>
+            </div>
+        
+            <!--INCLUDE WORD INPUT TEXT-->
+            <div style="height:100%; width:20%;">
+                <h4 class="above_text Space_Mono_Font center">Include:</h4>
+                <div class="center">
+                    <input type="text" id="include_user" placeholder="Put any letters here!" style="width: 70%;"><br>
+                </div>
+            </div>
+        
+            <!--INCLUDE SPECIAL CHARACTERS CHECKBOX-->
+            <div class="above_text Space_Mono_Font" style="height: 100%; width: 30%;">
+                <h4>Able to consist of:</h4><br>
+                <div class="">
+                    <input type="checkbox" id="number_include" name="other_characters" value="in_num"><label for="number_include">Numbers</label><br>
+                    <input type="checkbox" id="special_com_include" name="other_characters" value="in_spe_c"><label for="special_com_include">Special Characters</label><br>
+                    <input type="checkbox" id="capital_include" name="other_characters" value="in_cap"><label for="capital_include">Capitalization</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center above_text Space_Mono_Font">
+        <button id="submit_Button" type="button" onclick="madeup_or_real()" style="background-color: rgb(85, 116, 242); color: white; border: 2px solid white; border-radius: 8px; font-size: 2em;">Generate!</button>
+    </div>
+
+<!-- <body class="element_chrome_safari element_moz">
     <div style="position: relative; left: 10px; top: 10px; width: 10%;">
         <label class="above_text Space_Mono_Font">by : &#9; </label><label class="by_company_thing Space_Mono_Font">intiq.</label>
     </div>
@@ -107,5 +194,5 @@ i can't put divs to center that because i used absolute position and a ton of &n
 
     <script src="index.js"></script>
     <p class="above_text Space_Mono_Font" style="position: absolute; bottom: 0px; right: 5px; font-size: 0.5em;"><span style="color: red;">*</span>This website is only available for 16(+):9 or landscape screens</p>
-</body>
+</body> -->
 </html>
