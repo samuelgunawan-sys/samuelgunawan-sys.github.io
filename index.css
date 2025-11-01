@@ -1,3 +1,74 @@
+/*The below is new untested code for mobile/smaller screen support*/
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2em !important;
+    }
+
+    .display_word {
+        font-size: 1.5em;
+        padding: 10px;
+        word-wrap: break-word;
+    }
+
+    /* Stack all control sections vertically */
+    .center > .center {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center > .center > div {
+        width: 90% !important;
+        margin-bottom: 15px;
+    }
+
+    /* Make inputs, dropdowns, and buttons full width */
+    select, input[type="text"], input[type="number"], button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #submit_Button {
+        font-size: 1.2em !important;
+        padding: 10px 20px;
+    }
+
+    .by_company_thing {
+        font-size: 0.9em;
+        padding: 3px 8px;
+    }
+
+    .above_text {
+        font-size: 0.9em;
+    }
+}
+
+/*for smaller screens*/
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.6em !important;
+    }
+
+    .display_word {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    #submit_Button {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    select, input[type="text"], input[type="number"] {
+        font-size: 0.9em;
+    }
+}
+/*End of untested code*/
+
 .by_company_thing{
     background-color: white;
     border-width: 40px;
