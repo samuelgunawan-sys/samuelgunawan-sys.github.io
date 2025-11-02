@@ -357,7 +357,19 @@ function realWord(length_of_word){
             document.getElementById('finished_output').textContent = "The dictionary did not have time to load in. Please wait or don't click generate too fast.";
             return;
         }
-        const validWords = wordsfromurl.filter(word => word.length === a);
+        //this is for the include thing
+        const includeInputElem = document.getElementById("include_user"); //this is not necessary but helps clean up the code
+        const includeStr = includeInputElem ? String(includeInputElem.value).trim().toLowerCase() : '';
+
+        let validWords = wordsfromurl.filter(word => word.length === a);
+        if (includeStr.length > 0){
+            validWords = validWords.filter(word => word.includes(includeStr));
+            if (validWords.length === 0){
+                document.getElementById('finished_output').textContent = "No word includes that specific string.";
+                return;
+            }
+        }
+        //this is to output the finished word
         if (validWords.length > 0){
             const randomIndex = RandomNumber(validWords.length);
             let generatedWord = String(validWords[randomIndex]); //so that the capitalization thing works
