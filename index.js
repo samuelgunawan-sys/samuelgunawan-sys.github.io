@@ -156,10 +156,6 @@ function generate_random_word(word_length){
     let finished = "";
 
     let all_usable_words = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-/*    console.log(document.querySelector('input[name="other_characters"]:checked').value)
-    word_character_type_chosen = document.querySelector('input[name="other_characters"]:checked').value;*/
-    //use document.getElementById(innum, slsdjfdasfjsdkf), then make it so that if(innum), do stuff like switch ccase below
-    console.log(all_usable_words);
     if (document.querySelector('input[id="number_include"]:checked') !== null){
         all_usable_words.push("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
         vowels.push("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"); //so there will be more nums
@@ -211,10 +207,6 @@ function generate_random_word(word_length){
         finished[finished.length - 1] = phon_needed[1];
         finished[finished.length - 2] = phon_needed[0];
     }
-
-    console.log("these are finished, phon_needed, and st_mid_end : ", finished.join(""), phon_needed, st_mid_end);
-    console.log("this is vowelconsonant(finished) : ", vowelConsonant(finished));
-    
     
     let vow_co_check = vowelConsonant(finished);
     for (let j = 0; j < vow_co_check.length - 2; j++){
@@ -275,7 +267,6 @@ function generate_random_word(word_length){
 
     //this is for the include thing
     let include_word_string = document.getElementById("include_user").value;
-    console.log(include_word_string);
     if (include_word_string && include_word_string !== "-"){
         if (include_word_string.length == word_length){
             document.getElementById("finished_output").textContent = include_word_string;
@@ -287,21 +278,18 @@ function generate_random_word(word_length){
         }
         if (st_mid_end == 0){//first 2 unchangable
             let random_random_number = RandomNumber(finished.length - 2 - include_word_string.length) + 2;//can't get 0 and 1 ig
-            console.log(random_random_number);
             for (let i = 0; i < include_word_string.length; i++){
                 finished[random_random_number + i] = include_word_string[i];
             }
         }
         else if (st_mid_end == 1){ //basically, don't make the middle blend work when include is active
             let random_random_number = RandomNumber(finished.length - include_word_string.length); //-iws.l b/c so that it does not overflow
-            console.log(random_random_number);
             for (let i = 0; i < include_word_string.length; i++){
                 finished[random_random_number + i] = include_word_string[i];
             }
         }
         else if (st_mid_end == 2){
             let random_random_number = RandomNumber(finished.length - 2 - include_word_string.length); //can't get the last 2
-            console.log(random_random_number);
             for (let i = 0; i <include_word_string.length; i++){
                 finished[random_random_number + i] = include_word_string[i];
             }
