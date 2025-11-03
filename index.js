@@ -306,11 +306,10 @@ function realWord(length_of_word){
     const wordiguess = 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt';
     let wordsfromurl = [];
 
-    if (document.getElementById("include_user").value ||
-    document.querySelector('input[id="number_include"]:checked') || //just to make it all look a bit cleaner
+    if (document.querySelector('input[id="number_include"]:checked') || //just to make it all look a bit cleaner
     document.querySelector('input[id="special_com_include"]:checked') ||
     document.querySelector('input[id="capital_include"]:checked')){
-        document.getElementById("finished_output").textContent = 'Real words does not support "include" and "consists of", sorry!';
+        document.getElementById("finished_output").textContent = 'Real words does not support "consists of", sorry!';
         return;
     }
     loadbook();
